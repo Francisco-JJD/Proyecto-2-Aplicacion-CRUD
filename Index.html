@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+<meta charset="utf-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Proyecto 2: Aplicacioón CRUD por Francisco</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   
+    <section class="p-3">
+
+    <div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary newUser" data-bs-toggle="modal" fata-bs-target="#userForm"> Nuevo empleado <i class="bi bi-peoble"></i>
+<button> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped table-hover mt-3 text-center table-bordered">
+
+            <thead>
+                <tr>
+                    <th>No. Consectivo</th>
+                    <th>Fotografía</th>
+                    <th>Nombre completo</th>
+                    <th>Edad</th>
+                    <th>Ciudad</th>
+                    <th>Codigo Postal</th>
+                    <th>No. Telefono</th>
+                    <th>Fecha de Inicio de labores</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="data">></tbody>
+
+        </table>
+    </div>
+</div>
+</section>
+
+<!--Encabezado principal-->
+<div class="modal fade" id="userForm">
+    <div class="modal-content">
+
+        <div class="modal-deader">
+        <h4 class="modal-title">Moficar Perfil de Trabajador</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" arias-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+
+            <form action="#" id="myform">
+
+                <div class="carpeta imagenes">
+                    <laber for="imgInput" class="upload">
+                        <input type="file" name="imgInput">
+                        <i class="bi bi-plus-cicle-dotted"></i>
+                    </label>
+                    <img src="./image/perfil trabajador Icon.wepp" alt="" width="150" height="150" class="image">
+        </div>
+
+        <div class="inputFied">
+        <div>
+            <laber for="mombre">Nombre:</laber>
+            <input type"text" name="" id="nombre" required>
+        </div>
+        <div>
+            <laber for="Edad">Edad:</laber>
+            <input type"number" name="" id="edad" required>
+        </div>
+        <div>
+            <laber for="ciudad">Ciudad:</laber>
+            <input type"text" name="" id="ciudad" required>
+        </div>
+        <div>
+            <laber for="Codigopostale">Codigo Postal:</laber>
+            <input type"numer" name="" id="Codigopostal" required>
+        </div>
+        <div>
+            <laber for="telefono">No. Telefono:</laber>
+            <input type"text" name="" id="telefono" minlength="11" maxlength="11" required>
+        </div>
+        <div>
+            <laber for="Inciolabores">Fecha de Inicio Labores:</laber>
+            <input type"data" name="" id="Iniciolabores" required>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+        <button type="agregar" class="myform" class="btn btn-primary agregar"></button>
+    </div>
+    </div>
+</div>
+</div>
+
+<!--Modulo de lectura de datos-->
+<div class="modal fade" id="userForm">
+    <div class="modal-content">
+        <h4 class="modal-title">Modificar Perfil del Trabajador</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    </div>
+
+    <div class="modal-body">
+
+        <form action="#" id="myform">
+
+            <div class="carpeta imagenes">
+                <label for="imgInput" class="upload">
+                    <input type="file" name="" id="imgInput">
+                    <i class="bi bi-plus-circle-dotedd"></i>
+                </label>
+                <img src="./image/perfil del trabajador Icon.wepp" st="" width="150" height="150" class="img">
+            </div>
+
+            <div class="inputFied">
+                <div>
+                    <laber for="mombre">Nombre:</laber>
+                    <input type"text" name="" id="nombre" required>
+                </div>
+                <div>
+                    <laber for="Edad">Edad:</laber>
+                    <input type"number" name="" id="edad" required>
+                </div>
+                <div>
+                    <laber for="ciudad">Ciudad:</laber>
+                    <input type"text" name="" id="ciudad" required>
+                </div>
+                <div>
+                    <laber for="Codigopostale">Codigo Postal:</laber>
+                    <input type"numer" name="" id="Codigopostal" required>
+                </div>
+                <div>
+                    <laber for="telefono">No. Telefono:</laber>
+                    <input type"text" name="" id="telefono" minlength="11" maxlength="11" required>
+                </div>
+                <div>
+                    <laber for="Inciolabores">Fecha de Inicio Labores:</laber>
+                    <input type"data" name="" id="Iniciolabores" disabled>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
