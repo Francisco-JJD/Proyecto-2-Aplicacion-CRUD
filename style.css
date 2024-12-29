@@ -1,3 +1,13 @@
+
+.header {
+    background-image: url(images/Typhoon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    align-items: start;
+  
 table tr td{
     vertical-align: middle;
 }
@@ -22,7 +32,7 @@ td button i{
     padding: 0;
 }
 
-.modal-body form .imgholder{
+.modal-body form .carpeta imagenes{
     width: 150;
     height: 150;
     position: relative;

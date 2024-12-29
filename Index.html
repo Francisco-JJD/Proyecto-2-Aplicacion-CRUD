@@ -4,20 +4,22 @@
 <meta charset="utf-8">    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <title>Proyecto 2: Aplicacioón CRUD por Francisco</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-   
+    <header class="header">
+
     <section class="p-3">
 
     <div class="row">
-    <div class="col-12">
-        <button class="btn btn-primary newUser" data-bs-toggle="modal" fata-bs-target="#userForm"> Nuevo empleado <i class="bi bi-peoble"></i>
-<button> 
+     <div class="col-12">
+        <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm">Nuevo empleado <i class="bi bi-people"></i></button> 
     </div>
 </div>
+
 <div class="row">
     <div class="col-12">
         <table class="table table-striped table-hover mt-3 text-center table-bordered">
@@ -35,117 +37,123 @@
                     <th>Acción</th>
                 </tr>
             </thead>
-            <tbody id="data">></tbody>
+
+        <tbody id="data"></tbody>
 
         </table>
     </div>
 </div>
+
 </section>
 
 <!--Encabezado principal-->
 <div class="modal fade" id="userForm">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
 
-        <div class="modal-deader">
-        <h4 class="modal-title">Moficar Perfil de Trabajador</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" arias-label="Cerrar"></button>
+        <div class="modal-header">
+           <h4 class="modal-title">Crear Perfil de Trabajador</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
         <div class="modal-body">
 
-            <form action="#" id="myform">
+            <form action="#" id="myForm">
 
-                <div class="carpeta imagenes">
-                    <laber for="imgInput" class="upload">
-                        <input type="file" name="imgInput">
-                        <i class="bi bi-plus-cicle-dotted"></i>
+                <div class="carpeta_imagenes">
+                    <label for="imgInput" class="upload">
+                        <input type="file" name="" id="imgInput">
+                        <i class="bi bi-plus-circle-dotted"></i>
                     </label>
-                    <img src="./image/perfil trabajador Icon.wepp" alt="" width="150" height="150" class="image">
+                    <img src="./image/perfil trabajador Icon.webp" alt="" width="150" height="150" class="img">
         </div>
 
-        <div class="inputFied">
+        <div class="inputField">
         <div>
-            <laber for="mombre">Nombre:</laber>
+            <label for="nombre">Nombre:</label>
             <input type"text" name="" id="nombre" required>
         </div>
         <div>
-            <laber for="Edad">Edad:</laber>
+            <label for="edad">Edad:</label>
             <input type"number" name="" id="edad" required>
         </div>
         <div>
-            <laber for="ciudad">Ciudad:</laber>
+            <label for="ciudad">Ciudad:</label>
             <input type"text" name="" id="ciudad" required>
         </div>
         <div>
-            <laber for="Codigopostale">Codigo Postal:</laber>
-            <input type"numer" name="" id="Codigopostal" required>
+            <label for="Codigopostal">Codigo Postal:</label>
+            <input type"number" name="" id="Codigopostal" required>
         </div>
         <div>
-            <laber for="telefono">No. Telefono:</laber>
+            <label for="telefono">No. Telefono:</label>
             <input type"text" name="" id="telefono" minlength="11" maxlength="11" required>
         </div>
         <div>
-            <laber for="Inciolabores">Fecha de Inicio Labores:</laber>
-            <input type"data" name="" id="Iniciolabores" required>
+            <label for="Inciolabores">Fecha de Inicio Labores:</label>
+            <input type"date" name="" id="Iniciolabores" required>
         </div>
     </div>
+</form>
+</div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-        <button type="agregar" class="myform" class="btn btn-primary agregar"></button>
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+            <button type="agregar" class="myForm" class="btn btn-primary agregar"></button>
+         </div>
     </div>
-    </div>
-</div>
-</div>
+</div></div>
 
 <!--Modulo de lectura de datos-->
-<div class="modal fade" id="userForm">
-    <div class="modal-content">
-        <h4 class="modal-title">Modificar Perfil del Trabajador</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-    </div>
+<div class="modal fade" id="readData">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+         <div class="modal-content">
+
+        <div class="modal-header">
+            <h4 class="modal-title"> Visualizar Datos del Trabajador</h4>
+            <button type="cerrar" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
 
     <div class="modal-body">
 
         <form action="#" id="myform">
 
-            <div class="carpeta imagenes">
-                <label for="imgInput" class="upload">
-                    <input type="file" name="" id="imgInput">
-                    <i class="bi bi-plus-circle-dotedd"></i>
-                </label>
-                <img src="./image/perfil del trabajador Icon.wepp" st="" width="150" height="150" class="img">
+            <div class="carpeta_imagenes">
+                <img src="./image/perfil del trabajador Icon.webp" alt="" width="150" height="150" class="showimg">
             </div>
 
-            <div class="inputFied">
+
+            <div class="inputField">
                 <div>
-                    <laber for="mombre">Nombre:</laber>
-                    <input type"text" name="" id="nombre" required>
+                    <label for="nombre">Nombre:</label>
+                    <input type"text" name="" id="shownombre" disabled>
                 </div>
                 <div>
-                    <laber for="Edad">Edad:</laber>
-                    <input type"number" name="" id="edad" required>
+                    <laber for="Edad">Edad:</label>
+                    <input type"number" name="" id="showedad" disabled>
                 </div>
                 <div>
-                    <laber for="ciudad">Ciudad:</laber>
-                    <input type"text" name="" id="ciudad" required>
+                    <laber for="ciudad">Ciudad:</label>
+                    <input type"text" name="" id="showciudad" disabled>
                 </div>
                 <div>
-                    <laber for="Codigopostale">Codigo Postal:</laber>
-                    <input type"numer" name="" id="Codigopostal" required>
+                    <laber for="Codigopostale">Codigo Postal:</label>
+                    <input type"number" name="" id="showCodigopostal" disabled>
                 </div>
                 <div>
-                    <laber for="telefono">No. Telefono:</laber>
-                    <input type"text" name="" id="telefono" minlength="11" maxlength="11" required>
+                    <laber for="telefono">No. Telefono:</label>
+                    <input type"text" name="" id="showtelefono" minlength="11" maxlength="11" disabled>
                 </div>
                 <div>
-                    <laber for="Inciolabores">Fecha de Inicio Labores:</laber>
-                    <input type"data" name="" id="Iniciolabores" disabled>
+                    <laber for="Inciolabores">Fecha de Inicio Labores:</label>
+                    <input type"date" name="" id="showIniciolabores" disabled>
                 </div>
             </div>
         </form>
     </div>
 </div>
 </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script src="app.js"></script>
 </body>
