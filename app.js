@@ -1,13 +1,14 @@
 var form = document.getElementById("myForm"),
     imgInput = document.querySelector(".img"),
     file = document.getElementById("imgInput"),
-    nombre = document.getElementById("nombre"),
-    edad = document.getElementById("edad"),
-    ciudad = document.getElementById("ciudad"),
-    Codigopostal = document.getElementById("codigopostal"),
-    telefono = document.getElementById("telefono"),
-    Iniciolabores = document.getElementById("iniciolabores"),
-    submitBtn = document.querySelector(".agregar"),
+    userName = document.getElementById("name"),
+    Edad = document.getElementById("age"),
+    city = document.getElementById("city"),
+    email = document.getElementById("email"),
+    phone = document.getElementById("phone"),
+    post = document.getElementById("post"),
+    sDate = document.getElementById("sDate"),
+    submitBtn = document.querySelector(".submit"),
     userInfo = document.getElementById("data"),
     modal = document.getElementById("userForm"),
     modalTitle = document.querySelector("#userForm .modal-title"),
@@ -20,10 +21,10 @@ let isEdit = false, editId
 showInfo()
 
 newUserBtn.addEventListener('click', ()=> {
-    submitBtn.innerText = 'agregar',
-    modalTitle.innerText = "Fill the Form"
+    submitBtn.innerText = 'Agregar',
+    modalTitle.innerText = "Crear Perfil"
     isEdit = false
-    imgInput.src = "./image/perfil trabajador Icon.webp"
+    imgInput.src = "./image/Profile Icon.webp"
     form.reset()
 })
 
@@ -40,7 +41,7 @@ file.onchange = function(){
         fileReader.readAsDataURL(file.files[0])
     }
     else{
-        alert("Este es muy grande!")
+        alert("This file is too large!")
     }
 }
 
@@ -51,18 +52,19 @@ function showInfo(){
         let createElement = `<tr class="employeeDetails">
             <td>${index+1}</td>
             <td><img src="${element.picture}" alt="" width="50" height="50"></td>
-            <td>${element.employeenombre}</td>
-            <td>${element.employeeedad}</td>
-            <td>${element.employeeciudad}</td>
-            <td>${element.employeecodigopostal}</td>
-            <td>${element.employeetelefono}</td>
-            <td>${element.iniciolabores}</td>
+            <td>${element.employeeName}</td>
+            <td>${element.employeeAge}</td>
+            <td>${element.employeeCity}</td>
+            <td>${element.employeeEmail}</td>
+            <td>${element.employeePhone}</td>
+            <td>${element.employeePost}</td>
+            <td>${element.startDate}</td>
 
 
             <td>
-                <button class="btn btn-success" onclick="readInfo('${element.picture}', '${element.employeenombre}', '${element.employeeedad}', '${element.employeeciudad}', '${element.employeetelefono}', '${element.employeecodigopostal}', '${element.iniciolabores}')" data-bs-toggle="modal" data-bs-target="#readData"><i class="bi bi-eye"></i></button>
+                <button class="btn btn-success" onclick="readInfo('${element.picture}', '${element.employeeName}', '${element.employeeAge}', '${element.employeeCity}', '${element.employeeEmail}', '${element.employeePhone}', '${element.employeePost}', '${element.startDate}')" data-bs-toggle="modal" data-bs-target="#readData"><i class="bi bi-eye"></i></button>
 
-                <button class="btn btn-primary" onclick="editInfo(${index}, '${element.picture}', '${element.employeenombre}', '${element.employeeedad}', '${element.employeeciudad}', '${element.employeetelefono}', '${element.employeecodigopostal}', '${element.iniciolabores}')" data-bs-toggle="modal" data-bs-target="#userForm"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-primary" onclick="editInfo(${index}, '${element.picture}', '${element.employeeName}', '${element.employeeAge}', '${element.employeeCity}', '${element.employeeEmail}', '${element.employeePhone}', '${element.employeePost}', '${element.startDate}')" data-bs-toggle="modal" data-bs-target="#userForm"><i class="bi bi-pencil-square"></i></button>
 
                 <button class="btn btn-danger" onclick="deleteInfo(${index})"><i class="bi bi-trash"></i></button>
                             
@@ -75,35 +77,37 @@ function showInfo(){
 showInfo()
 
 
-function readInfo(pic, nombre, edad, ciudad, telefono, codigopostal, iniciolabores){
+function readInfo(pic, name, age, city, email, phone, post, sDate){
     document.querySelector('.showImg').src = pic,
-    document.querySelector('#shownombre').value = nombre,
-    document.querySelector("#showedad").value = edad,
-    document.querySelector("#showciudad").value = ciudad,
-    document.querySelector("#showCodigopostal").value = codigopostal,
-    document.querySelector("#showtelefono").value = telefono,
-    document.querySelector("#showiniciolabores").value = iniciolabores
+    document.querySelector('#showName').value = name,
+    document.querySelector("#showAge").value = age,
+    document.querySelector("#showCity").value = city,
+    document.querySelector("#showEmail").value = email,
+    document.querySelector("#showPhone").value = phone,
+    document.querySelector("#showPost").value = post,
+    document.querySelector("#showsDate").value = sDate
 }
 
 
-function editInfo(index, pic, edad, ciudad, telefono, codigopostal, iniciolabores){
+function editInfo(index, pic, name, Age, City, Email, Phone, Post, Sdate){
     isEdit = true
     editId = index
     imgInput.src = pic
-    nombre.value = nombre
-    edad.value = edad
-    ciudad.value =ciudad
-    codigopostal.value = codigopostal,
-    telefono.value = telefono,
-    iniciolabores.value = iniciolabores
+    userName.value = name
+    age.value = Age
+    city.value =City
+    email.value = Email,
+    phone.value = Phone,
+    post.value = Post,
+    sDate.value = Sdate
 
-    submitBtn.innerText = "Update"
-    modalTitle.innerText = "Update The Form"
+    submitBtn.innerText = "Actualizar"
+    modalTitle.innerText = "Actualizar perfil"
 }
 
 
 function deleteInfo(index){
-    if(confirm("Estas sweguro que deseas borrar?")){
+    if(confirm("¿Estas seguro que deseas borrar el registro?")){
         getData.splice(index, 1)
         localStorage.setItem("userProfile", JSON.stringify(getData))
         showInfo()
@@ -111,17 +115,18 @@ function deleteInfo(index){
 }
 
 
-form.addEventListener('agregar', (e)=> {
+form.addEventListener('submit', (e)=> {
     e.preventDefault()
 
     const information = {
-        picture: imgInput.src == undefined ? "./image/perfil trabajador Icon.webp" : imgInput.src,
-        employeenombre: nombre.value,
-        employeeedad: edad.value,
-        employeeciudad: ciudad.value,
-        employeecodigopostal: Codigopostal.value,
-        employeetelefono: telefono.value,
-        iniciolabores: iniciolabores.value
+        picture: imgInput.src == undefined ? "./image/Profile Icon.webp" : imgInput.src,
+        employeeName: userName.value,
+        employeeAge: age.value,
+        employeeCity: city.value,
+        employeeEmail: email.value,
+        employeePhone: phone.value,
+        employeePost: post.value,
+        startDate: sDate.value
     }
 
     if(!isEdit){
@@ -134,14 +139,14 @@ form.addEventListener('agregar', (e)=> {
 
     localStorage.setItem('userProfile', JSON.stringify(getData))
 
-    submitBtn.innerText = "Submit"
-    modalTitle.innerHTML = "Fill The Form"
+    submitBtn.innerText = "Agregar"
+    modalTitle.innerHTML = "Crear Perfil"
 
     showInfo()
 
     form.reset()
 
-    imgInput.src = "./image/perfil trabajador Icon.webp"  
+    imgInput.src = "./image/Profile Icon.webp"  
 
     // modal.style.display = "none"
     // document.querySelector(".modal-backdrop").remove()

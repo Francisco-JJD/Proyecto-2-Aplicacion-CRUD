@@ -1,6 +1,17 @@
+.encabezado{
+    text-size-adjust: ;
+    position: center;
+    background: #39465a;
+    display: flex;
+    margin: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-color: cyan;
+}
 
 .header {
-    background-image: url(images/Typhoon.jpg);
+    background-image: url(image/Typhoon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -22,7 +33,7 @@ td button i{
 
 .modal-header{
     background: #39465a;
-    color:#fff;
+    color:#f7f2f256;
 }
 
 .modal-body form{
@@ -32,15 +43,15 @@ td button i{
     padding: 0;
 }
 
-.modal-body form .carpeta imagenes{
-    width: 150;
-    height: 150;
+.modal-body form .imgholder{
+    width: 150px;
+    height: 200px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
 }
 
-.imgholder upload{
+.imgholder .upload{
     position: absolute;
     bottom: 0;
     left: 10;
@@ -68,7 +79,7 @@ td button i{
 
 .modal-body form .inputField{
     flex-basis: 68%;
-    border-left: 5px groove blueviolet;
+    border-left: 1px groove blueviolet;
     padding-left: 20pxs;
 }
 
@@ -87,7 +98,7 @@ form .inputField > div label{
 
 #userForm form .inputField > div label::after{
     content: "*";
-    color: red;
+    color: rgb(91, 16, 16);
 }
 
 form .inputField > div input{
@@ -99,7 +110,7 @@ form .inputField > div input{
     border-bottom: 2px solid blueviolet;
 }
 
-.modal-footer .agregar{
+.modal-footer .submit{
     font-size: 18px;
 }
 
@@ -108,3 +119,8 @@ form .inputField > div input{
     font-size: 18px;
 }
 
+.footer{
+    color: #878585;
+    font-size: 2px;
+    position: center;
+}
