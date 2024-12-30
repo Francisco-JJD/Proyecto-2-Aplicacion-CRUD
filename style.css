@@ -1,5 +1,5 @@
 .encabezado{
-    text-size-adjust: ;
+    text-size-adjust: 4px;
     position: center;
     background: #39465a;
     display: flex;
@@ -118,9 +118,7 @@ form .inputField > div input{
     color: #000;
     font-size: 18px;
 }
-
 .footer{
     color: #878585;
     font-size: 2px;
-    position: center;
 }
